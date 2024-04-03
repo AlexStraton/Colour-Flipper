@@ -1,34 +1,15 @@
 "use strict";
-
-const greenBtn = document.querySelector(".green");
-const blueBtn = document.querySelector(".blue");
-const redBtn = document.querySelector(".red");
-const randomBtn = document.querySelector(".random");
+const body = document.getElementsByTagName("body")[0];
 
 function revertBackgColour() {
   setTimeout(() => {
-    document.body.style.backgroundColor = "bisque";
+    body.style.backgroundColor = "bisque";
   }, 2000);
 }
 
-greenBtn.addEventListener("click", () => {
-  document.body.style.backgroundColor = "green";
-  revertBackgColour();
-});
-
-blueBtn.addEventListener("click", () => {
-  document.body.style.backgroundColor = "lightblue";
-  revertBackgColour();
-});
-
-redBtn.addEventListener("click", () => {
-  document.body.style.backgroundColor = "red";
-  revertBackgColour();
-});
-
-randomBtn.addEventListener("click", () => {
-  randomColor();
-});
+function addBackgroundColour(colorName) {
+  body.style.backgroundColor = colorName;
+}
 
 //generate random colour
 function randomColor() {
@@ -36,7 +17,7 @@ function randomColor() {
   const green = Math.round(Math.random() * 255);
   const blue = Math.round(Math.random() * 255);
   const color = `rgb(${red}, ${green}, ${blue})`;
-  document.body.style.backgroundColor = color;
+  body.style.backgroundColor = color;
 }
 
 //cookie message
